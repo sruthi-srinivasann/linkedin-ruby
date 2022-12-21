@@ -9,17 +9,17 @@ describe LinkedIn::Organizations do
   end
 
   it "should be able to view an organization profile" do
-    stub("https://api.linkedin.com/v2/organizations/1586")
+    stub("https://api.linkedin.com/202206/organizations/1586")
     expect(api.organization(id: 1586)).to be_an_instance_of(LinkedIn::Mash)
   end
 
   it "should be able to view an organization by vanity name" do
-    stub("https://api.linkedin.com/v2/organizations?q=vanityName&vanityName=acme")
+    stub("https://api.linkedin.com/202206/organizations?q=vanityName&vanityName=acme")
     expect(api.organization(vanity_name: "acme")).to be_an_instance_of(LinkedIn::Mash)
   end
 
   it "should be able to view an organization by e-mail domain" do
-    stub("https://api.linkedin.com/v2/organizations?q=emailDomain&emailDomain=acme.com")
+    stub("https://api.linkedin.com/202206/organizations?q=emailDomain&emailDomain=acme.com")
     expect(api.organization(email_domain: "acme.com")).to be_an_instance_of(LinkedIn::Mash)
   end
 
