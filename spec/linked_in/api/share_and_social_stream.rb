@@ -9,7 +9,7 @@ describe LinkedIn::ShareAndSocialStream do
   end
 
   it "should be able to share a new status" do
-    stub_request(:post, 'https://api.linkedin.com/202206/shares').to_return(body: '', status: 201)
+    stub_request(:post, 'https://api.linkedin.com/rest/shares').to_return(body: '', status: 201)
     response = api.share(comment: 'Testing, 1, 2, 3')
     expect(response.status).to eq 201
     expect(response.body).to eq ''
