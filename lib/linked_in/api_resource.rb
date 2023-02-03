@@ -61,7 +61,7 @@ module LinkedIn
     end
 
     def post(path=nil, body=nil, headers=nil, &block)
-      @connection.post(prepend_prefix(path), body, headers, &block)
+      @connection.post("https://api.linkedin.com/rest" + path, body, headers, &block)
     end
 
     def put(path=nil, body=nil, headers=nil, &block)
